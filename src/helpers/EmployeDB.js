@@ -15,6 +15,13 @@ export const InitDataEmployes = () => {
             business: 'Test 1',
             salary: 28000,
             pincture: ''
+        },
+        {
+            id: 3,
+            name: 'Demo tres',
+            business: 'Test tres',
+            salary: 8000,
+            pincture: ''
         }
     ]
     localStorage.setItem(NameLocalStorage.EMPLOYES , JSON.stringify(employes))
@@ -42,6 +49,6 @@ export const FilterEmployeByNameOrBusiness = (value) => {
     const data = value !== '' ? 
     employes.filter(emp => (emp.name.toLowerCase()).includes(value.toLowerCase()) || (emp.business.toLowerCase()).includes(value.toLowerCase())) 
     : employes;
-    
+
     return data;
 }

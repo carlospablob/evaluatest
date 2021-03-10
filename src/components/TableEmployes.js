@@ -5,8 +5,6 @@ import { FormatCurrency } from './../utils/FormatCurrency';
 export const TableEmployes = ({employes, typeCurrency}) => {
 
     return (
-        <div className="container mt-4">
-
             <Table responsive striped bordered hover>
                 <thead>
                     <tr>
@@ -25,7 +23,9 @@ export const TableEmployes = ({employes, typeCurrency}) => {
                                 <td>{emp.id}</td>
                                 <td>{emp.name}</td>
                                 <td>{emp.business}</td>
-                                <td>{FormatCurrency(emp.salary, typeCurrency)}</td>
+                                <td className={emp.salary > 10000 ? "text-right salary-green" : "text-right salary-red"}>
+                                    {FormatCurrency(emp.salary, typeCurrency)}
+                                </td>
                                 <td>{emp.picture}</td>
                                 <td>
                                     <Button >
@@ -38,7 +38,5 @@ export const TableEmployes = ({employes, typeCurrency}) => {
 
                 </tbody>
             </Table>
-
-        </div>
     )
 }

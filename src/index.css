@@ -11,3 +11,52 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.salary-green {
+  color: #00A319;
+}
+
+.salary-red {
+  color: #D60E0E;
+}
+
+button {
+  background-color: transparent!important;
+  color: #00A319!important;
+  border-color: #00A319!important;
+  outline: none!important;
+}
+
+button:hover {
+  background-color: #00A319!important;
+  color: white!important;
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); 
+}
+
+button:focus {
+  outline: none !important;
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+button:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; 
+}
+
+button::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  z-index: -1;
+  transition: all .4s; 
+}
+
+.btn--animated {
+  animation: moveInBottom .5s ease-out .75s;
+  animation-fill-mode: backwards; 
+}
