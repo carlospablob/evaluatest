@@ -8,11 +8,17 @@ const HomeEmployes = () => {
 
     const [employes, setEmployes] = useState([]);
 
+    const [typeCurrency, setTypeCurrency] = useState('MX');
 
     useEffect(() => {
         InitDataEmployes();
         setEmployes(GetInitEmployes());
     }, [])
+
+
+    const handleChangeCurrency = () => {
+        setTypeCurrency(typeCurrency === 'MX' ? 'US' : 'MX')
+    }
 
     return (
         <div className="container pt-4">
@@ -22,7 +28,7 @@ const HomeEmployes = () => {
                 </Col>
 
                 <Col md={3}>
-                    <p>Salario en: MX | US</p>
+                    <p>Salario en: {typeCurrency}</p>
                 </Col>
                 <Col md={6}>
                     
@@ -30,7 +36,7 @@ const HomeEmployes = () => {
                         Agregar empleado
                     </Button>
 
-                    <Button  className="float-right">
+                    <Button  className="float-right" onClick={handleChangeCurrency}>
                         Cambio de moneda
                     </Button>
 
@@ -42,7 +48,7 @@ const HomeEmployes = () => {
                     <FilterEmploye setEmployes={setEmployes}/>
                 </Col>
             </Row>
-            <TableEmployes employes={employes}/>
+            <TableEmployes employes={employes} typeCurrency={typeCurrency}/>
         </div>
     )
 }
