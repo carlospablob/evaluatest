@@ -4,8 +4,15 @@ export const InitDataEmployes = () => {
     const employes = [
         {
             id: 1,
-            name: 'Carlos',
+            name: 'Carlos Pablo',
             business: 'PALO IT',
+            salary: 28000,
+            pincture: ''
+        },
+        {
+            id: 2,
+            name: 'Demo demo',
+            business: 'Test 1',
             salary: 28000,
             pincture: ''
         }
@@ -27,4 +34,14 @@ export const SaveEmploye = (employe) => {
     localStorage.setItem(NameLocalStorage.EMPLOYES, JSON.stringify(employes));
 
     return employes;
+}
+
+export const FilterEmployeByNameOrBusiness = (value) => {
+    const employes = JSON.parse(localStorage.getItem(NameLocalStorage.EMPLOYES))
+
+    const data = value !== '' ? 
+    employes.filter(emp => (emp.name.toLowerCase()).includes(value.toLowerCase()) || (emp.business.toLowerCase()).includes(value.toLowerCase())) 
+    : employes;
+    
+    return data;
 }

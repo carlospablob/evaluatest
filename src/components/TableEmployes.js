@@ -10,11 +10,11 @@ export const TableEmployes = ({employes}) => {
             <Table responsive striped bordered hover>
                 <thead>
                     <tr>
-                    <th>#</th>
-                    <th>Nombre</th>
-                    <th>Empresa</th>
-                    <th>Salario</th>
-                    <th>Foto</th>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Empresa</th>
+                        <th>Salario</th>
+                        <th>Foto</th>
                     </tr>
                 </thead>
                 <tbody>

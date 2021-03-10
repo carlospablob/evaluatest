@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { TableEmployes } from '../components/TableEmployes';
 import { Button, Col, Row } from 'react-bootstrap';
+import { TableEmployes } from '../components/TableEmployes';
 import { GetInitEmployes, InitDataEmployes } from '../helpers/EmployeDB';
+import { FilterEmploye } from '../components/FilterEmploye';
 
 const HomeEmployes = () => {
 
@@ -34,8 +35,12 @@ const HomeEmployes = () => {
                     </Button>
 
                 </Col>
+            </Row>
 
-
+            <Row>
+                <Col md={12}>
+                    <FilterEmploye setEmployes={setEmployes}/>
+                </Col>
             </Row>
             <TableEmployes employes={employes}/>
         </div>
