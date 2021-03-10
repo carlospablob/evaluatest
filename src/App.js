@@ -6,10 +6,11 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import TableEmployes from './components/TableEmployes';
+
+import HomeEmployes from './pages/HomeEmployes';
 
 
-function App() {
+export const App = () => {
   return (
     <Router>
       
@@ -21,7 +22,7 @@ function App() {
 
       <Switch>
         <Route path="/">
-          <TableEmployes />
+          <HomeEmployes />
         </Route>
       </Switch>
 

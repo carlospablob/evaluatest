@@ -2,12 +2,12 @@ import React from 'react';
 import { Table } from 'react-bootstrap';
 import { FormatCurrency } from './../utils/FormatCurrency';
 
-const TableEmployes = () => {
+export const TableEmployes = ({employes}) => {
 
     return (
         <div className="container mt-4">
 
-            <Table striped bordered hover>
+            <Table responsive striped bordered hover>
                 <thead>
                     <tr>
                     <th>#</th>
@@ -18,29 +18,21 @@ const TableEmployes = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>{FormatCurrency(16900)}</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>{FormatCurrency(16900.333)}</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>3</td>
-                        <td>Larry the Bird</td>
-                        <td>{FormatCurrency(3000)}</td>
-                    </tr>
+                    {
+                        employes.map(emp => (
+                            <tr key={emp.id}>
+                                <td>{emp.id}</td>
+                                <td>{emp.name}</td>
+                                <td>{emp.business}</td>
+                                <td>{FormatCurrency(emp.salary)}</td>
+                                <td>{emp.picture}</td>
+                            </tr>
+                        ))
+                    }
+
                 </tbody>
             </Table>
 
         </div>
     )
 }
-
-export default TableEmployes;
