@@ -60,3 +60,12 @@ button::after {
   animation: moveInBottom .5s ease-out .75s;
   animation-fill-mode: backwards; 
 }
+
+p {
+  font-size: 20px;
+}
+
+p span{
+  color: black;
+  font-weight: bold;
+}

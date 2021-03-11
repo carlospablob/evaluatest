@@ -27,11 +27,11 @@ const HomeEmployes = () => {
         <div className="container pt-4">
             <Row>
                 <Col md={3}>
-                    <p>Total de empleados: {totalEmployes}</p>
+                    <p>Total de empleados: <span>{totalEmployes}</span></p>
                 </Col>
 
                 <Col md={3}>
-                    <p>Salario en: {typeCurrency}</p>
+                    <p>Salario en: <span>{typeCurrency} </span> </p>
                 </Col>
                 <Col md={6}>
                     

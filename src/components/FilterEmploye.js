@@ -9,7 +9,9 @@ export const FilterEmploye = ({setEmployes}) => {
     const handleInputChange = (e) => {
         setInputValue(e.target.value);
 
-        setEmployes(FilterEmployeByNameOrBusiness(inputValue) );
+        if(inputValue.length > 0) {
+            setEmployes(FilterEmployeByNameOrBusiness(inputValue) );        
+        }
 
     }
 
@@ -17,7 +19,9 @@ export const FilterEmploye = ({setEmployes}) => {
         e.preventDefault();
 
         console.log(inputValue);
-        setEmployes(FilterEmployeByNameOrBusiness(inputValue) );
+        if(inputValue.length > 0) {
+            setEmployes(FilterEmployeByNameOrBusiness(inputValue) );
+        }
         // setInputValue('');
     }
 

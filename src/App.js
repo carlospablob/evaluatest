@@ -4,13 +4,15 @@ import {Navbar } from 'react-bootstrap';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
+  Route
 } from "react-router-dom";
 
 import HomeEmployes from './pages/HomeEmployes';
+import AddEmploye from './components/AddEmploye';
 
 
 export const App = () => {
+
   return (
     <Router>
       
@@ -21,11 +23,16 @@ export const App = () => {
       </Navbar>
 
       <Switch>
+        
+        <Route path="/agregar-empleado">
+          <AddEmploye />
+        </Route>
+
         <Route path="/">
           <HomeEmployes />
         </Route>
-      </Switch>
 
+      </Switch>
 
     </Router>
   );

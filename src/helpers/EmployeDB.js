@@ -1,6 +1,8 @@
 import { NameLocalStorage } from "../utils/NameLocalStorage"
 
 export const InitDataEmployes = () => {
+    const employesLocalStorage = JSON.parse(localStorage.getItem(NameLocalStorage.EMPLOYES))
+
     const employes = [
         {
             id: 1,
@@ -24,7 +26,12 @@ export const InitDataEmployes = () => {
             pincture: ''
         }
     ]
-    localStorage.setItem(NameLocalStorage.EMPLOYES , JSON.stringify(employes))
+    
+    if(employesLocalStorage) {
+        localStorage.setItem(NameLocalStorage.EMPLOYES , JSON.stringify(employesLocalStorage));
+    } else {
+        localStorage.setItem(NameLocalStorage.EMPLOYES , JSON.stringify(employes));
+    }
 }
 
 export const GetInitEmployes = () => {
