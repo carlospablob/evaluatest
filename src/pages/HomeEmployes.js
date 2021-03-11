@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
 import { TableEmployes } from '../components/TableEmployes';
-import { GetInitEmployes, InitDataEmployes } from '../helpers/EmployeDB';
+import { GetInitEmployes, InitDataEmployes, GetTotalEmployes } from '../helpers/EmployeDB';
 import { FilterEmploye } from '../components/FilterEmploye';
 
 const HomeEmployes = () => {
@@ -15,7 +15,7 @@ const HomeEmployes = () => {
     useEffect(() => {
         InitDataEmployes();
         setEmployes(GetInitEmployes());
-        setTotalEmployes(employes.length);
+        setTotalEmployes(GetTotalEmployes());
     }, [])
 
 

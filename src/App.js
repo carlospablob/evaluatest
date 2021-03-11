@@ -9,6 +9,7 @@ import {
 
 import HomeEmployes from './pages/HomeEmployes';
 import AddEmploye from './components/AddEmploye';
+import EditEmploye from './components/EditEmploye';
 
 
 export const App = () => {
@@ -26,6 +27,10 @@ export const App = () => {
         
         <Route path="/agregar-empleado">
           <AddEmploye />
+        </Route>
+
+        <Route path="/editar-empleado/:id">
+          <EditEmploye />
         </Route>
 
         <Route path="/">

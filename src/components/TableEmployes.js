@@ -28,7 +28,7 @@ export const TableEmployes = ({employes, typeCurrency}) => {
                                 </td>
                                 <td>{emp.picture}</td>
                                 <td>
-                                    <Button >
+                                    <Button className="btn" href={ '/editar-empleado/' + emp.id }>
                                         Editar
                                     </Button>
                                 </td>

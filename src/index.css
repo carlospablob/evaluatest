@@ -20,21 +20,21 @@ code {
   color: #D60E0E;
 }
 
-button {
+button, .btn {
   background-color: transparent!important;
   color: #00A319!important;
   border-color: #00A319!important;
   outline: none!important;
 }
 
-button:hover {
+button:hover, .btn:hover {
   background-color: #00A319!important;
   color: white!important;
   transform: translateY(-3px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); 
 }
 
-button:focus {
+button:focus, .btn:focus {
   outline: none !important;
 }
 
@@ -42,12 +42,12 @@ button:focus {
   box-shadow: none;
 }
 
-button:hover::after {
+button:hover::after, .btn:hover::after {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0; 
 }
 
-button::after {
+button::after, .btn::after {
   content: "";
   height: 100%;
   width: 100%;
