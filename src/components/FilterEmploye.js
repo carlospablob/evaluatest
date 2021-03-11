@@ -9,10 +9,7 @@ export const FilterEmploye = ({setEmployes}) => {
     const handleInputChange = (e) => {
         setInputValue(e.target.value);
 
-        if(inputValue.length > 0) {
-            setEmployes(FilterEmployeByNameOrBusiness(inputValue) );        
-        }
-
+        setEmployes(FilterEmployeByNameOrBusiness(e.target.value) );
     }
 
     const handleSubmit = (e) => {
@@ -31,7 +28,7 @@ export const FilterEmploye = ({setEmployes}) => {
                 <Col md={6}>
                     <Form.Label>Filtrar por:</Form.Label>
                     <Form.Control 
-                        type="search"
+                        type="text"
                         placeholder="Nombre o empresa"
                         value={inputValue}
                         onChange={handleInputChange} />
